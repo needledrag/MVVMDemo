@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<viewbase:ViewBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewbase="clr-namespace:MVVMDemo.Views.Base"
+             x:Class="MVVMDemo.Views.SingletonMsgRecieverView"
+             xmlns:behaviors="clr-namespace:MVVMDemo.Behaviours"
+             xmlns:viewmodels="clr-namespace:MVVMDemo.ViewModels"
+             x:TypeArguments="viewmodels:SingletonMsgRecieverViewModel"
+             x:DataType="viewmodels:SingletonMsgRecieverViewModel">
+    <VerticalStackLayout Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+    <Label
+        Text="Singleton page"/>
+   <Button
+        Text="Load transient page"
+        Command="{Binding LoadSubscriberCommand}"/>
+
+        <Label Text="{Binding Count}" FontAttributes="Bold" FontSize="22"/>
+    </VerticalStackLayout>
+</viewbase:ViewBase>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMDemo.Views.PageBase"
+             Title="PageBase">
+    <Grid
+        IgnoreSafeArea="True">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{OnPlatform Android=16, iOS=36, Default=0}" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+
+
+        <!-- Grid to contain Page Content -->
+        <Grid
+            x:Name="PageContentGrid"
+            IgnoreSafeArea="True"/>
+
+    
+
+
+
+        <!-- Page Header -->
+        <Grid
+            Grid.Row="1"
+            ColumnDefinitions="56,*,56"
+            Margin="0,4"
+            IgnoreSafeArea="True">
+
+            <!-- Icons for Left Side -->
+            <ImageButton
+                x:Name="HamburgerButton"
+                Source="dotnet_bot.png"
+                VerticalOptions="Center"
+                HorizontalOptions="Start"
+                Style="{StaticResource IconButtonStyle}"
+                Grid.Column="0" />
+            <!--Clicked="HamburgerButton_Clicked"-->
+
+            <ImageButton
+                x:Name="NavigateBackButton"
+                Source="dotnet_bot.png"
+                VerticalOptions="Center"
+                HorizontalOptions="Start"
+                Style="{StaticResource IconButtonStyle}"
+                Grid.Column="0"
+                Command="{Binding NavigateBackCommand, Mode=OneWay}" />
+
+            <ImageButton
+                x:Name="CloseButton"
+                Source="dotnet_bot.png"
+                VerticalOptions="Center"
+                HorizontalOptions="Start"
+                Style="{StaticResource IconButtonStyle}"
+                Grid.Column="0"
+                Command="{Binding CloseModalCommand, Mode=OneWay}" />
+
+            <!-- Page Header Label -->
+            <Label
+                Grid.Column="1"
+                x:Name="TitleLabel"
+                IsVisible="False"
+                VerticalOptions="Center"
+                HorizontalOptions="Fill"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                Margin="6,0,6,-1"
+                Style="{StaticResource PageHeaderTextStyle}" />
+
+            <!-- Icons for Right Side -->
+            <Grid
+                x:Name="PageIconsGrid"
+                Grid.Column="2"
+                Margin="0,4"
+                VerticalOptions="Center"
+                HorizontalOptions="End" />
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

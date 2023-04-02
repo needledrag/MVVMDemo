@@ -1,0 +1,17 @@
+﻿<viewbase:ViewBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMDemo.Views.MessageSenderView"
+             xmlns:viewbase="clr-namespace:MVVMDemo.Views.Base"
+             xmlns:viewmodels="clr-namespace:MVVMDemo.ViewModels"
+             x:TypeArguments="viewmodels:MessageSenderViewModel"
+             x:DataType="viewmodels:MessageSenderViewModel"
+             Title="MessageSenderView">
+     <viewbase:ViewBase.PageContent>
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+        <Button
+            Text="Click me to send message"
+            Command="{Binding SendMessageCommand}"/>
+    </VerticalStackLayout>
+</viewbase:ViewBase.PageContent>
+</viewbase:ViewBase>
